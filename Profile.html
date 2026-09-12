@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anshul Thakur — AI Product Manager" />
+  <title>Anshul Thakur — AI Product Manager</title>
+  <style>
+    :root{
+      --bg:#f5f5f7;
+      --card:rgba(255,255,255,.72);
+      --text:#1d1d1f;
+      --muted:#6e6e73;
+      --line:rgba(0,0,0,.08);
+      --blue:#0071e3;
+      --shadow:0 24px 70px rgba(0,0,0,.08);
+      --radius:30px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 80% 8%,rgba(0,113,227,.10),transparent 28%),
+        radial-gradient(circle at 10% 35%,rgba(120,80,255,.08),transparent 24%),
+        var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .nav{
+      position:fixed;z-index:20;top:0;left:0;right:0;
+      height:58px;display:flex;align-items:center;justify-content:center;
+      background:rgba(245,245,247,.72);backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .nav-inner{width:min(1100px,92%);display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:-.03em}
+    .nav-links{display:flex;gap:28px;color:#555;font-size:14px}
+    .nav-links a:hover{color:#000}
+    .menu{display:none;border:0;background:none;font-size:22px}
+    main{width:min(1100px,92%);margin:auto}
+    .hero{
+      min-height:92vh;display:flex;align-items:center;
+      padding:110px 0 70px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:center;width:100%}
+    .eyebrow{
+      display:inline-flex;padding:8px 13px;border-radius:999px;
+      background:#fff;border:1px solid var(--line);font-size:13px;font-weight:600;
+      box-shadow:0 8px 30px rgba(0,0,0,.04);
+    }
+    h1{
+      font-size:clamp(58px,9vw,112px);line-height:.9;
+      letter-spacing:-.075em;margin:24px 0 26px;font-weight:700;
+    }
+    .gradient{background:linear-gradient(100deg,#111 20%,#0071e3 72%,#7b61ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy{font-size:clamp(20px,2.3vw,28px);line-height:1.25;letter-spacing:-.03em;max-width:700px;color:#424245}
+    .location{margin-top:24px;color:var(--muted);font-size:15px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 20px;border-radius:999px;font-size:15px;font-weight:600;
+      transition:.25s ease;
+    }
+    .btn-primary{background:var(--text);color:white}
+    .btn-secondary{background:white;border:1px solid var(--line)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.10)}
+    .orb{
+      aspect-ratio:1;border-radius:42% 58% 60% 40% / 42% 38% 62% 58%;
+      background:linear-gradient(145deg,#0b0b0d,#242428 45%,#0071e3);
+      box-shadow:0 35px 90px rgba(0,0,0,.18);
+      position:relative;overflow:hidden;
+      animation:morph 9s ease-in-out infinite;
+    }
+    .orb:after{
+      content:"";position:absolute;inset:12%;
+      border:1px solid rgba(255,255,255,.22);border-radius:50%;
+      box-shadow:inset 0 0 60px rgba(255,255,255,.08);
+    }
+    .orb-text{
+      position:absolute;inset:0;display:grid;place-items:center;text-align:center;
+      color:#fff;z-index:2;padding:35px;
+    }
+    .orb-text strong{display:block;font-size:clamp(30px,4vw,52px);letter-spacing:-.06em}
+    .orb-text span{display:block;margin-top:8px;color:#d8eaff;font-size:14px}
+    @keyframes morph{
+      0%,100%{border-radius:42% 58% 60% 40% / 42% 38% 62% 58%}
+      50%{border-radius:55% 45% 38% 62% / 56% 62% 38% 44%}
+    }
+    section{padding:85px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+    .kicker{color:var(--blue);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    h2{font-size:clamp(38px,5vw,62px);line-height:1;letter-spacing:-.06em;margin:8px 0 0}
+    .section-intro{color:var(--muted);max-width:450px;line-height:1.55}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:var(--card);backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.8);border-radius:var(--radius);
+      padding:30px;box-shadow:var(--shadow);min-height:190px;
+      transition:.25s ease;
+    }
+    .card:hover{transform:translateY(-5px)}
+    .icon{font-size:28px;margin-bottom:34px}
+    .card h3{font-size:22px;letter-spacing:-.035em;margin:0 0 9px}
+    .card p{margin:0;color:var(--muted);line-height:1.5}
+    .timeline{
+      border-top:1px solid var(--line);
+    }
+    .row{
+      display:grid;grid-template-columns:1fr 2fr;gap:40px;
+      padding:28px 0;border-bottom:1px solid var(--line);
+    }
+    .date{font-size:14px;color:var(--muted)}
+    .row h3{margin:0 0 8px;font-size:22px;letter-spacing:-.035em}
+    .row p{margin:0;color:var(--muted);line-height:1.5}
+    .pill-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .pill{padding:11px 15px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600}
+    .contact{
+      background:#111;color:#fff;border-radius:38px;padding:60px;
+      position:relative;overflow:hidden;
+    }
+    .contact:before{
+      content:"";position:absolute;width:380px;height:380px;border-radius:50%;
+      background:#0071e3;filter:blur(90px);opacity:.45;right:-130px;top:-180px;
+    }
+    .contact > *{position:relative}
+    .contact h2{max-width:700px}
+    .contact p{color:#b7b7bd;font-size:18px;line-height:1.5;max-width:600px}
+    .contact .btn-primary{background:#fff;color:#111}
+    footer{padding:35px 0 55px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:760px){
+      .nav-links{display:none}.menu{display:block}
+      .hero{padding-top:105px}.hero-grid{grid-template-columns:1fr}
+      .orb{max-width:360px;width:80%;margin:0 auto}
+      .cards{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-intro{margin-top:18px}
+      .row{grid-template-columns:1fr;gap:8px}
+      .contact{padding:38px 28px;border-radius:28px}
+      footer{display:block}.footer-right{margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">AT.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile')">☰</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">AI Product Manager</span>
+          <h1>Anshul<br><span class="gradient">Thakur.</span></h1>
+          <p class="hero-copy">Building thoughtful products where artificial intelligence, product strategy and human needs meet.</p>
+          <p class="location">Based in Chandigarh, India</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:thakuranshul360@gmail.com">Get in touch ↗</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/anshul-thakur-04806b241" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="orb" aria-label="AI Product Manager">
+          <div class="orb-text">
+            <div>
+              <strong>AI × Product</strong>
+              <span>Ideas → experiences → impact</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Profile</div>
+          <h2>Product thinking,<br>with an AI lens.</h2>
+        </div>
+        <p class="section-intro">A focused personal portfolio built around the professional profile provided: AI Product Manager, with strengths in product development and product management.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">✦</div>
+          <h3>AI Product</h3>
+          <p>Exploring how AI can become useful, intuitive product experiences.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⌁</div>
+          <h3>Product Management</h3>
+          <p>Connecting user needs, product decisions and business outcomes.</p>
+        </article>
+        <article class="card">
+          <div class="icon">◌</div>
+          <h3>Product Development</h3>
+          <p>Turning ideas into clear product directions and practical experiences.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Capabilities</div>
+          <h2>Core skills.</h2>
+        </div>
+      </div>
+      <div class="pill-wrap">
+        <span class="pill">Product Development</span>
+        <span class="pill">Product Management</span>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Education</div>
+          <h2>Learning foundation.</h2>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="row">
+          <div class="date">June 2020 — July 2022</div>
+          <div>
+            <h3>Shoolini University</h3>
+            <p>MSc in Chemistry, Physical Chemistry</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="date">Bachelor's degree</div>
+          <div>
+            <h3>Panjab University, Chandigarh</h3>
+            <p>Bachelor of Science</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="kicker">Certifications</div>
+          <h2>Always learning.</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">01</div><h3>AI Tools Workshop</h3><p>Certification</p></article>
+        <article class="card"><div class="icon">02</div><h3>Elements Of AI</h3><p>Certification</p></article>
+        <article class="card"><div class="icon">03</div><h3>Portfolio Management Assessment</h3><p>Certification</p></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div class="kicker">Contact</div>
+        <h2>Let’s build something meaningful.</h2>
+        <p>Interested in product, AI or simply connecting? Reach out directly by email or find me on LinkedIn.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:thakuranshul360@gmail.com">thakuranshul360@gmail.com</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/anshul-thakur-04806b241" target="_blank" rel="noopener">View LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Anshul Thakur</span>
+      <span class="footer-right">AI Product Manager · Chandigarh, India</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const links = document.querySelector(".nav-links");
+    document.querySelector(".menu").addEventListener("click", () => {
+      links.style.display = links.style.display === "flex" ? "" : "flex";
+      if (links.style.display === "flex") {
+        links.style.position = "absolute";
+        links.style.top = "58px";
+        links.style.left = "0";
+        links.style.right = "0";
+        links.style.padding = "20px";
+        links.style.background = "rgba(245,245,247,.96)";
+        links.style.flexDirection = "column";
+        links.style.textAlign = "center";
+      }
+    });
+  </script>
+</body>
+</html>
